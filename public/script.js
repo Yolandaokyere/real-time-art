@@ -15,6 +15,7 @@ socket.on('message', message => {
   messages.scrollTop = messages.scrollHeight
 })
 
+const inputElement = document.getElementById('guessWord')
 
 // THE HANGMAN CHAT GAME
 // SVG FILE HANGMAN
@@ -28,6 +29,13 @@ console.log(words);
 var selectedWord = words[Math.floor(Math.random() * words.length)];
 console.log(selectedWord);
 
+// Nu wordt er door het woord (selectedWord.length) geloopt. Voor elk letter van het woord zet het een ' _ '
+for (var i = 0; i < selectedWord.length; i++) {
+  letters[i] = "_";
+  console.log(letters[i]);
+}
+
+  
 
 
 
