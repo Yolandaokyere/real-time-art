@@ -5,6 +5,26 @@ const http = require('http').createServer(app)
 const port = process.env.PORT || 6060;
 const io = require('socket.io')(http)
 
+
+// // The Chatbot
+// var builder = require('botbuilder');
+// var restify = require('restify');
+// // Setup Restify Server
+// var server = restify.createServer();
+
+// // Create chat bot
+// var connector = new builder.ChatConnector({
+//   appId: process.env.MY_APP_ID,
+//   appPassword: process.env.MY_APP_PASSWORD
+// });
+
+// var bot = new builder.UniversalBot(connector);
+// server.post('/api/messages', connector.listen());
+// // The bot itself
+// bot.dialog('/', function (session) {
+//   session.send("Hello World");
+// });
+
 app.set("view engine", "ejs");
 app.set("views", "./views");
 

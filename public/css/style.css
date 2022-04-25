@@ -1,3 +1,4 @@
+/* Chatbox */
 body {
     box-sizing: border-box;
     margin: 0;
@@ -149,3 +150,51 @@ body {
     padding-left: 1rem;
     color: red;
   }
+
+  
+* {
+  box-sizing: border-box;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* hANGMAN EXAMPLE */
+
+svg {
+  width: 300px;
+  height: 300px;
+}
+
+#head,
+#arm-l,
+#arm-r,
+#leg-l,
+#leg-r,
+#torso {
+  display: none;
+}
+
+/* #text {
+  background: aliceblue;
+  height: 100px;
+  min-width: 200px;
+  padding: 5px;
+} */
+
+/* section {
+  display: flex;
+} */
+
+
+
+/* #letters {
+  font-size: 50px;
+} */
+
+/* #prompt {
+  font-size: 25px;
+  margin-top: 50px;
+} */

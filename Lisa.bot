@@ -1,0 +1,18 @@
+{
+    "name": "Lisa",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "name": "http://localhost:5555/api/messages",
+            "id": "0a0769c0-c246-11ec-9891-d75ac47fd877",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:5555/api/messages"
+        }
+    ],
+    "padlock": "eKJXytM+tjAifgmF5/go3w==!xSx94EphwPoROIN1yUtGYhL7xVrV/hDTNE0NG5Kmd+moQxgN9zXpejcamtIB6sWs",
+    "version": "2.0",
+    "path": "D:\\real-time\\real-time-art\\Lisa.bot",
+    "overrides": null
+}
