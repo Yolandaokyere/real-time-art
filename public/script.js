@@ -1,71 +1,62 @@
-let socket = io()
-let messages = document.querySelector('section ul')
-let input = document.querySelector('input')
+let socket = io();
+let messages = document.querySelector("section ul");
+let input = document.querySelector("input");
 
 // THE HANGMAN CHAT GAME
 // - - - - - - - - - - CONSTANTES - - - - - - - - - - - - -
 
-
 // SVG FILE HANGMAN
 var parts = ["head", "torso", "arm-l", "arm-r", "leg-l", "leg-r"];
+let pogingen = 0;
+
 // WORD ARRAY
 var words = ["test", "cheese", "dog"];
-console.log(words);
-// SHOW the 'words'
-    // window.alert(words);
+
 // Pick a random word out of the array of words
 var selectedWord = words[Math.floor(Math.random() * words.length)];
 console.log(selectedWord);
 
-var amountLetters = selectedWord.length;
-
 // Nu wordt er door het woord (selectedWord.length) geloopt. Voor elk letter van het woord zet het een ' _ '
+var answerArray = [];
 for (var i = 0; i < selectedWord.length; i++) {
-  amountLetters[i] = "_";
-  console.log(amountLetters[i]);
+  answerArray[i] = "_";
 }
 
 var remainingLetters = selectedWord.length;
+let answer;
+let lives;
 
-document.querySelector('form').addEventListener('submit', event => {
-  event.preventDefault()
-  socket.emit('message', input.value)
+// ------------------------ T H E G A M E ---------------------------
+document.querySelector("form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  socket.emit("message", input.value);
+  console.log(input.value);
 
-  while (amountLetters > 0) {                                                         // Zolang het aantal letters boven de 0 is
-  var guessLetter = input.value                                                       //pakt value van de input
-  console.log(guessLetter)
-
-  
-      if (guessLetter === null) {                                                     //kijkt of het geraden woord wel bestaat
-      break;                                                                          //bestaat het niet? stop dan de loop
-      } else if (guessLetter.length !== 1) {                                          //bestaat het wel? ga dan verder
-      alert("Please enter a single letter.");
-      } else {
-    // GAME UPDATE
-      for (var j = 0; j < selectedord.length; j++) {
-        if (word[j] === guessLetter) {
-          amountLetters[j] = guessLetter; amountLetters--;
-          
-        }
+  if (selectedWord.includes(input.value)) {
+    console.log("letter geraden!");
+    console.log(selectedWord.indexOf(input.value));
+    // Answerarray updaten
+    answerArray[selectedWord.indexOf(input.value)] = input.value;
+    console.log(answerArray);
+  } else {
+    // Gebruiker heeft het fout we gaan pogingen updaten
+    if (pogingen !== 6) {
+      pogingen = pogingen + 1;
+      if (parts.length > 0) {
+        var part = document.getElementById(parts[0]);
+        part.style.display = "block";
+        parts.shift();
+        console.log("fout!");
       }
+    } else {
+      alert("Game Over");
     }
   }
+});
 
-  input.value = ''
-})
-
-socket.on('message', message => {
-  messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
-  messages.scrollTop = messages.scrollHeight
-})
-
-
-
-
-
-
-
-  
-
-
-
+socket.on("message", (message) => {
+  messages.appendChild(
+    Object.assign(document.createElement("li"), { textContent: message })
+  );
+  messages.scrollTop = messages.scrollHeight;
+});
