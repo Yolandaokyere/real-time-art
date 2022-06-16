@@ -1,7 +1,7 @@
 let socket = io();
 let messages = document.querySelector("section ul");
 let input = document.querySelector("input");
-
+var form = document.getElementById('form');
 // THE HANGMAN CHAT GAME
 // - - - - - - - - - - CONSTANTES - - - - - - - - - - - - -
 
