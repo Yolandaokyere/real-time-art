@@ -53,6 +53,7 @@ for (var i = 0; i < selectedWord.length; i++) {
   }
 });
 ```
+![hangman week 1](https://user-images.githubusercontent.com/97689634/174082663-f03e47da-92df-43a2-9601-c44958860727.png)
 
 #### Werkweek II
 #### Werkweek III
