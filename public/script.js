@@ -29,6 +29,7 @@ let lives;
 // ------------------------ T H E G A M E ---------------------------
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
+  
   socket.emit("message", input.value);
   console.log(input.value);
 
@@ -55,6 +56,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
 });
 
 socket.on("message", (message) => {
+  input.value = ''
   messages.appendChild(
     Object.assign(document.createElement("li"), { textContent: message })
   );
