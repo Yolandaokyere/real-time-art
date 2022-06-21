@@ -75,6 +75,20 @@ fetch("/words")
   .then((data) => data.json())
   .then((data) => {
    ```
+In werkweek 1 was het spel nog niet helemaal compleet. Bij een woord als 'cheese' waar 2 keer de letter 'e' zich in het woord bevindt werd enkel de letter 'e' in answerArray geplaats. Dit kwam doordat het niet door het geselecteerde woord loopte. Dit is verbeterd door een loop op het geselecteerde woord te plaatsen. Op de afbeelding zie je bij het woord 'spiderman - no way home' wordt geloopt door het woord en de letter 'a' dus in answerArray wordt geplaats.
+``` ruby
+const selectedWordArray = selectedWord.split("");
+
+for (let i = 0; i < selectedWordArray.length; i++) {
+        if (input.value === selectedWordArray[i]) {
+          console.log("letter geraden!");
+          // Answerarray updaten
+          answerArray[i] = input.value;
+          console.log(answerArray);
+        }
+      }
+ ```
+ ![hangman loop verbeterd](https://user-images.githubusercontent.com/97689634/174742342-124380d5-b34f-45c1-a4e8-68e90f82843e.png)
 
 #### Werkweek III
 
