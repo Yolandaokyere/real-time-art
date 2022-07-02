@@ -56,10 +56,44 @@ for (var i = 0; i < selectedWord.length; i++) {
 ![hangman week 1](https://user-images.githubusercontent.com/97689634/174082663-f03e47da-92df-43a2-9601-c44958860727.png)
 
 #### Werkweek II
+In werkweek 2 heb ik de woorden vervangen met de titels van een film. De data is gefetch van een movie database API.
+Hieruit kwam er veel informatie uit de data rollen (zie foto).
+Met de map methode heb ik enkel de informatie uitgehaald die ik wil gebruiken voor het galgje spel
+``` ruby
+  fetch(endpoint)
+  .then(res => res.json())
+  .then(json => {
+  
+  const {results} = json;
+  const titles = results.map(result => result.title)
+  ```
+  ![hangman api info](https://user-images.githubusercontent.com/97689634/174736531-82d44121-3931-44c4-b00b-22fec512ab7e.png)
+
+Vervolgens moest de data verstuurt worden van de server(main.js) naar de client(script.js). Dit kon door een routie aan te maken. ```router.get('/words', (req, res) =>``` Een ander optie was om het script in een EJS file te verplaatsen. Vervolgens is de data opnieuw gefetch in script.js om deze op te halen:
+``` ruby
+fetch("/words")
+  .then((data) => data.json())
+  .then((data) => {
+   ```
+In werkweek 1 was het spel nog niet helemaal compleet. Bij een woord als 'cheese' waar 2 keer de letter 'e' zich in het woord bevindt werd enkel de letter 'e' in answerArray geplaats. Dit kwam doordat het niet door het geselecteerde woord loopte. Dit is verbeterd door een loop op het geselecteerde woord te plaatsen. Op de afbeelding zie je bij het woord 'spiderman - no way home' wordt geloopt door het woord en de letter 'a' dus in answerArray wordt geplaats.
+``` ruby
+const selectedWordArray = selectedWord.split("");
+
+for (let i = 0; i < selectedWordArray.length; i++) {
+        if (input.value === selectedWordArray[i]) {
+          console.log("letter geraden!");
+          // Answerarray updaten
+          answerArray[i] = input.value;
+          console.log(answerArray);
+        }
+      }
+ ```
+ ![hangman loop verbeterd](https://user-images.githubusercontent.com/97689634/174742342-124380d5-b34f-45c1-a4e8-68e90f82843e.png)
+
 #### Werkweek III
 
 ## API
-Voor dit project heb ik gebruik gemaak van een woord API: https://www.wordsapi.com/
+Voor dit project heb ik gebruik gemaak van een movie database API:[themovieDB](https://developers.themoviedb.org/3/getting-started/introduction)
 
 ## Goals
 After finishing this program you can:
