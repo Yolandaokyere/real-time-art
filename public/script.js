@@ -2,6 +2,8 @@ let socket = io();
 let messages = document.querySelector("section ul");
 let input = document.querySelector("input");
 var form = document.getElementById("form");
+// Showt aantal letters in het woord met '_' en geraden letters
+var letters = document.getElementById("letters"); 
 // THE HANGMAN CHAT GAME
 // - - - - - - - - - - CONSTANTES - - - - - - - - - - - - -
 
@@ -26,6 +28,7 @@ fetch("/words")
     var answerArray = [];
     for (var i = 0; i < selectedWord.length; i++) {
       answerArray[i] = "_";
+      letters.innerHTML = answerArray.join(" ");
     }
 
     var remainingLetters = selectedWord.length;
@@ -53,6 +56,7 @@ fetch("/words")
           // Answerarray updaten
           answerArray[i] = input.value;
           console.log(answerArray);
+          letters.innerHTML = answerArray.join(" ");
         }
       }
 
