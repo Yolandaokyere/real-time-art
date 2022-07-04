@@ -4,18 +4,16 @@ Met de Hang-Chat game speel je het klassieke spel galgje in een online chatroom.
 ![image](https://user-images.githubusercontent.com/97689634/174070493-f11d78ac-5f5d-44d7-b257-268bfe702155.png)
 
 ## Table of Contents
-- [Live Demo](#livedemo)
-- [Features](#features)
+- [Live Demo](#live-demo)
 - [Process](#process)
-- [API](api)
+- [Data-Lifecycle](#data-lifecycle)
+- [API](#api)
+- [MoSCoW](#moscow)
 - [Goals](#goals)
 - [Resources](#resources)
 
 ## Live Demo
-Speel dit spel samen of in je eentje op x..
-
-## Features
-Lorem ipsum blabla
+Speel dit spel samen of in je eentje op https://hang-chatmovies.herokuapp.com/ 
 
 ## Process
 ### 🧠Inspiratie
@@ -94,14 +92,14 @@ for (let i = 0; i < selectedWordArray.length; i++) {
 Deze werkweek wou ik op de juiste manier gebruik maken van sockets. Echter was het ingewikkeld om deze toe te passen op het spel zelf.
 De spelers zijn realtime verbonden met de chat maar niet met het spel. Ieder speler speelt dus individueel het spel.
 ## Data-Lifecycle
+![Leeg diagram](https://user-images.githubusercontent.com/97689634/177118708-832876e2-abf5-47e1-9bc1-9367ba33cbfb.png)
 ## API
 Voor dit project heb ik gebruik gemaak van een movie database API:[themovieDB](https://developers.themoviedb.org/3/getting-started/introduction)
-
 ## MoSCoW
 ### Must
 - [x] Working app on Heroku
 - [x] Documented Readme.
-- [ ] Data-lifecycle
+- [x] Data-lifecycle
 - [x] Real time events
 - [x] API
 - [x] Using Socket.io events
