@@ -92,7 +92,7 @@ for (let i = 0; i < selectedWordArray.length; i++) {
 
 #### Werkweek III
 Deze werkweek wou ik op de juiste manier gebruik maken van sockets. Echter was het ingewikkeld om deze toe te passen op het spel zelf.
-De spelers zijn realtime verbonden met de chat maar niet met het sppel. Ieder speler speelt dus individueel het spel.
+De spelers zijn realtime verbonden met de chat maar niet met het spel. Ieder speler speelt dus individueel het spel.
 ## Data-Lifecycle
 ## API
 Voor dit project heb ik gebruik gemaak van een movie database API:[themovieDB](https://developers.themoviedb.org/3/getting-started/introduction)
