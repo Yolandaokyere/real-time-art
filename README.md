@@ -91,9 +91,40 @@ for (let i = 0; i < selectedWordArray.length; i++) {
  ![hangman loop verbeterd](https://user-images.githubusercontent.com/97689634/174742342-124380d5-b34f-45c1-a4e8-68e90f82843e.png)
 
 #### Werkweek III
-
+Deze werkweek wou ik op de juiste manier gebruik maken van sockets. Echter was het ingewikkeld om deze toe te passen op het spel zelf.
+De spelers zijn realtime verbonden met de chat maar niet met het sppel. Ieder speler speelt dus individueel het spel.
+## Data-Lifecycle
 ## API
 Voor dit project heb ik gebruik gemaak van een movie database API:[themovieDB](https://developers.themoviedb.org/3/getting-started/introduction)
+
+## MoSCoW
+### Must
+- [x] Working app on Heroku
+- [x] Documented Readme.
+- [ ] Data-lifecycle
+- [x] Real time events
+- [x] API
+- [x] Using Socket.io events
+- [x] Client-server interaction
+- [x] Data management
+- [ ] Multi user support
+- [ ] GAME logic 
+     - [x] Alert when user loses
+     - [ ] Alert when user wins
+     - [x] Show correct guesses in game
+     - [x] Show wrong guesses in game with hangman
+     - [ ] Remove blank spaces in the to guess movie title
+     
+### Should
+- [ ] UI stack
+- [ ] Convert the calling string value to lower case
+
+### Could
+- [ ] Choose different Theme
+
+### Would
+- [ ] Show how many lifes user has left
+ 
 
 ## Goals
 After finishing this program you can:
