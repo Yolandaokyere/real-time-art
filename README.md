@@ -132,3 +132,5 @@ After finishing this program you can:
 - _handle multi-user support._
 
 ## Resources
+- [pdf-Hangman Game](https://nostarch.com/download/JS4K_ch7.pdf)
+- [School slides](https://github.com/cmda-minor-web/real-time-web-2122)
